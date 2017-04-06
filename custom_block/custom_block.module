@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_block.module.
+ */
+
+use Drupal\custom_block\Block\BlockName;
+
+/**
+ * Implements hook_block_info().
+ */
+function custom_block_block_info() {
+  return array(
+    'block_name' => BlockName::getInfo(),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function custom_block_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'block_name':
+      return BlockName::build();
+  }
+
+  return $block;
+}

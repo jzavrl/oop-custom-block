@@ -1,0 +1,9 @@
+name = Custom Block
+description = Custom block module.
+core = 7.x
+package = Custom
+version = 7.x-1.0
+
+dependencies[] = registry_autoload
+
+registry_autoload[] = PSR-4
